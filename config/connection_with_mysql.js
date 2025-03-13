@@ -10,6 +10,28 @@ const DB = mysql.createConnection({
 
 DB.connect((error) => {
   if (error) console.error("DATABASE Error:", error);
+
+  DB.query(usersTable, (error, result) => {
+    if (error) console.error("Tables Users Error:", error);
+    console.log("table users created");
+  });
+  DB.query(categoriesTable, (error, result) => {
+    if (error) console.error("Tables Categories Error:", error);
+    console.log("table categories created");
+  });
+  DB.query(productsTable, (error, result) => {
+    if (error) console.error("Tables Products Error:", error);
+    console.log("table products created");
+  });
+  DB.query(product_imagesTable, (error, result) => {
+    if (error) console.error("Tables Product_images Error:", error);
+    console.log("table product_images created");
+  });
+  DB.query(cartsTable, (error, result) => {
+    if (error) console.error("Tables Carts Error:", error);
+    console.log("table carts created");
+  });
+
   console.info("connected with mysql database successfully");
 });
 
@@ -66,21 +88,5 @@ const cartsTable = `CREATE TABLE IF NOT EXISTS carts (
     CONSTRAINT fk_carts_products FOREIGN KEY (product_id) REFERENCES products(id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT fk_carts_users FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
 );`;
-
-DB.query(usersTable, (error, result) => {
-  if (error) console.error("Tables Users Error:", error);
-});
-DB.query(categoriesTable, (error, result) => {
-  if (error) console.error("Tables Categories Error:", error);
-});
-DB.query(productsTable, (error, result) => {
-  if (error) console.error("Tables Products Error:", error);
-});
-DB.query(product_imagesTable, (error, result) => {
-  if (error) console.error("Tables Product_images Error:", error);
-});
-DB.query(cartsTable, (error, result) => {
-  if (error) console.error("Tables Carts Error:", error);
-});
 
 module.exports = DB;
