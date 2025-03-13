@@ -12,7 +12,12 @@ const DB = mysql.createConnection({
 });
 
 DB.connect((error) => {
-  if (error) console.error("DATABASE Error:", error);
+  if (error) {
+    console.error("DATABASE Error:", error);
+    DB.end((error) => {
+      console.error(error);
+    });
+  }
 
   DB.query(usersTable, (error, result) => {
     if (error) console.error("Tables Users Error:", error);
