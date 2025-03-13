@@ -7,6 +7,7 @@ const DB = mysql.createConnection({
   password: process.env.PASSWORD,
   port: process.env.DATABASE_PORT,
   insecureAuth: true,
+  waitForConnections: true,
 });
 
 DB.connect((error) => {
@@ -14,22 +15,27 @@ DB.connect((error) => {
 
   DB.query(usersTable, (error, result) => {
     if (error) console.error("Tables Users Error:", error);
+    if (result.warningStatus > 0) return;
     console.log("table users created");
   });
   DB.query(categoriesTable, (error, result) => {
     if (error) console.error("Tables Categories Error:", error);
+    if (result.warningStatus > 0) return;
     console.log("table categories created");
   });
   DB.query(productsTable, (error, result) => {
     if (error) console.error("Tables Products Error:", error);
+    if (result.warningStatus > 0) return;
     console.log("table products created");
   });
   DB.query(product_imagesTable, (error, result) => {
     if (error) console.error("Tables Product_images Error:", error);
+    if (result.warningStatus > 0) return;
     console.log("table product_images created");
   });
   DB.query(cartsTable, (error, result) => {
     if (error) console.error("Tables Carts Error:", error);
+    if (result.warningStatus > 0) return;
     console.log("table carts created");
   });
 
