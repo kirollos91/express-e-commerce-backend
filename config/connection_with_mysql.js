@@ -68,19 +68,19 @@ const cartsTable = `CREATE TABLE IF NOT EXISTS carts (
 );`;
 
 DB.query(usersTable, (error, result) => {
-  if (error) console.error("Tables Error:", error);
+  if (error) console.error("Tables Users Error:", error);
 });
 DB.query(categoriesTable, (error, result) => {
-  if (error) console.error("Tables Error:", error);
+  if (error) console.error("Tables Categories Error:", error);
 });
 DB.query(productsTable, (error, result) => {
-  if (error) console.error("Tables Error:", error);
+  if (error) console.error("Tables Products Error:", error);
 });
 DB.query(product_imagesTable, (error, result) => {
-  if (error) console.error("Tables Error:", error);
+  if (error) console.error("Tables Product_images Error:", error);
 });
 DB.query(cartsTable, (error, result) => {
-  if (error) console.error("Tables Error:", error);
+  if (error) console.error("Tables Carts Error:", error);
 });
 
 module.exports = DB;
