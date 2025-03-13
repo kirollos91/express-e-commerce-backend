@@ -17,6 +17,7 @@ DB.connect((error) => {
     DB.end((error) => {
       console.error(error);
     });
+    return;
   }
 
   DB.query(usersTable, (error, result) => {
