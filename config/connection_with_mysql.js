@@ -12,26 +12,26 @@ const DB = mysql.createConnection({
 DB.connect((error) => {
   if (error) console.error("DATABASE Error:", error);
 
-  DB.query(usersTable, (error, result) => {
-    if (error) console.error("Tables Users Error:", error);
-    console.log("table users created");
-  });
-  DB.query(categoriesTable, (error, result) => {
-    if (error) console.error("Tables Categories Error:", error);
-    console.log("table categories created");
-  });
-  DB.query(productsTable, (error, result) => {
-    if (error) console.error("Tables Products Error:", error);
-    console.log("table products created");
-  });
-  DB.query(product_imagesTable, (error, result) => {
-    if (error) console.error("Tables Product_images Error:", error);
-    console.log("table product_images created");
-  });
-  DB.query(cartsTable, (error, result) => {
-    if (error) console.error("Tables Carts Error:", error);
-    console.log("table carts created");
-  });
+  // DB.query(usersTable, (error, result) => {
+  //   if (error) console.error("Tables Users Error:", error);
+  //   console.log("table users created");
+  // });
+  // DB.query(categoriesTable, (error, result) => {
+  //   if (error) console.error("Tables Categories Error:", error);
+  //   console.log("table categories created");
+  // });
+  // DB.query(productsTable, (error, result) => {
+  //   if (error) console.error("Tables Products Error:", error);
+  //   console.log("table products created");
+  // });
+  // DB.query(product_imagesTable, (error, result) => {
+  //   if (error) console.error("Tables Product_images Error:", error);
+  //   console.log("table product_images created");
+  // });
+  // DB.query(cartsTable, (error, result) => {
+  //   if (error) console.error("Tables Carts Error:", error);
+  //   console.log("table carts created");
+  // });
 
   console.info("connected with mysql database successfully");
 });
