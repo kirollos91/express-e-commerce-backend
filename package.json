@@ -21,7 +21,7 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^2.3.3",
+    "mysql2": "^3.13.0",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
