@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 const DB = mysql.createConnection({
   host: process.env.HOST,
   database: process.env.DATABASE,
-  username: process.env.USER,
+  user: process.env.USER,
   password: process.env.PASSWORD,
   port: process.env.DATABASE_PORT,
   dialect: "mysql",
